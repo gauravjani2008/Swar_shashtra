@@ -428,7 +428,8 @@ for slot in schedule:
     css_class = "slot-chandra" if slot["swar_key"] == "chandra" else "slot-surya"
     active_border = " slot-active" if slot["is_active"] else ""
     label = slot["start"].strftime("%-I%p")
-    timeline_html += f'<div class="timeline-slot {css_class}{active_border}" style="width:calc(8.33% - 4px);" title="{slot[\"swar_label\"]}">{label}</div>'
+    swar_title = slot["swar_label"]
+    timeline_html += f'<div class="timeline-slot {css_class}{active_border}" style="width:calc(8.33% - 4px);" title="{swar_title}">{label}</div>'
 timeline_html += '</div>'
 timeline_html += '<div style="display:flex;gap:16px;font-size:0.8rem;margin-bottom:8px;">'
 timeline_html += '<span><span style="display:inline-block;width:12px;height:12px;background:#1E3A8A;border-radius:2px;"></span> Chandra (Left)</span>'
